@@ -30,6 +30,7 @@ public class Array及拓展 {
         Array及拓展.test("moreThanOneValue参数长度为：",1,2,3,4,5,6,7,8);
     }
     //  ...三个点代表可以输入任意数量的同一类型参数
+
     public static void test(String str, int... moreThanOneValue){   //其他的参数只能放在可变长参数前面
         System.out.println(str + moreThanOneValue.length);
     }
