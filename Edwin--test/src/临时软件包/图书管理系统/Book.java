@@ -27,6 +27,6 @@ public class Book implements Serializable {
 
     @Override
     public String toString() {
-        return"=================\n书籍名称《"+title+"》\n作者：" + author +"\n价格：¥" + price + "\n=================";
+        return"/=============\n书籍名称《"+title+"》\n作者：" + author +"\n价格：¥" + price + "\n=================";
     }
 }
