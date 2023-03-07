@@ -21,19 +21,25 @@ public class Main {
             System.out.println("5.退出管理系统");
             System.out.println("==========================================");
 
-            switch (scanner.nextInt()) {
-                case 1 -> insert(scanner);
-                case 2 -> list();
-                case 3 -> modify(scanner);
-                case 4 -> delete(scanner);
-                case 5 -> {
-                    System.out.println("正在保存数据...");
-                    save();
-                    System.out.println("感谢您的使用，再见！");
-                    return;
+            try {
+                switch (scanner.nextInt()) {
+                    case 1 -> insert(scanner);
+                    case 2 -> list();
+                    case 3 -> modify(scanner);
+                    case 4 -> delete(scanner);
+                    case 5 -> {
+                        System.out.println("正在保存数据...");
+                        save();
+                        System.out.println("感谢您的使用，再见！");
+                        return;
+                    }
+                    default -> System.out.println("非法输入，请再试一次：");
                 }
-                default -> System.out.println("非法输入 程序结束");
+            } catch (InputMismatchException e){
+                System.out.println("非法输入，请再试一次：");
+                scanner.nextLine();
             }
+
         }
     }
 
@@ -68,13 +74,13 @@ public class Main {
         String author = scanner.nextLine();
         System.out.println("请输入书籍价格");
         try {
-            int price = scanner.nextInt();
+            double price = scanner.nextInt();
             scanner.nextLine();
             临时软件包.图书管理系统.Book book = new 临时软件包.图书管理系统.Book(title, author, price);
             LIST.add(book);
             System.out.println(book);
         } catch (InputMismatchException e) {
-            System.out.println("输入的价格不是一个合法的整数，请重新输入。");
+            System.out.println("非法输入，请再试一次：");
             scanner.nextLine();
         }
     }
