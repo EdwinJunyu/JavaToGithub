@@ -29,4 +29,8 @@ public class Book implements Serializable {
     public String toString() {
         return"/=============\n书籍名称《"+title+"》\n作者：" + author +"\n价格：¥" + price + "\n=================";
     }
+
+    public String getTitle() {
+        return title;
+    }
 }

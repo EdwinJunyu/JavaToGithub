@@ -1,9 +1,6 @@
 package 临时软件包.图书管理系统;
 import java.io.*;
-import java.util.InputMismatchException;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static List<Book> LIST = new LinkedList<>();
@@ -15,19 +12,21 @@ public class Main {
         while (true) {
             System.out.println("================图书管理系统================");
             System.out.println("1.录入书籍信息");
-            System.out.println("2.查阅书籍信息");
-            System.out.println("3.修改书籍信息");
-            System.out.println("4.删除书籍信息");
-            System.out.println("5.退出管理系统");
+            System.out.println("2.查阅所有书籍信息");
+            System.out.println("3.查阅特定书籍信息");
+            System.out.println("4.修改书籍信息");
+            System.out.println("5.删除书籍信息");
+            System.out.println("6.退出管理系统");
             System.out.println("==========================================");
 
             try {
                 switch (scanner.nextInt()) {
                     case 1 -> insert(scanner);
                     case 2 -> list();
-                    case 3 -> modify(scanner);
-                    case 4 -> delete(scanner);
-                    case 5 -> {
+                    case 3 -> bookSearch(scanner);
+                    case 4 -> modify(scanner);
+                    case 5 -> delete(scanner);
+                    case 6 -> {
                         System.out.println("正在保存数据...");
                         save();
                         System.out.println("感谢您的使用，再见！");
@@ -79,6 +78,7 @@ public class Main {
             临时软件包.图书管理系统.Book book = new 临时软件包.图书管理系统.Book(title, author, price);
             LIST.add(book);
             System.out.println(book);
+            System.out.println("书籍录入成功！");
         } catch (InputMismatchException e) {
             System.out.println("非法输入，请再试一次：");
             scanner.nextLine();
@@ -89,6 +89,31 @@ public class Main {
         for (int i = 0; i < LIST.size(); i++){
             System.out.println(i + ". " + LIST.get(i));
         }
+    }
+
+    private static String bookSearch(Scanner scanner){
+        scanner.nextLine();
+        System.out.print("请输入你要查找的书籍：");
+        String title = scanner.nextLine();
+        LIST.sort((b1, b2) -> b1.getTitle().compareTo(b2.getTitle()));
+        int left = 0;
+        int right = LIST.size() - 1;
+
+        while (left <= right) {
+            int mid = (left + right) / 2;
+            int cmp = LIST.get(mid).getTitle().compareTo(title);
+            if (cmp == 0) {
+                System.out.println("系统有" + LIST.get(mid).getTitle() + "这本书");
+                return LIST.get(mid).getTitle();
+            } else if (cmp < 0) {
+                left = mid + 1;
+            } else {
+                right = mid - 1;
+            }
+        }
+        System.out.println("系统没有查到这本书");
+        return null;
+
     }
 
     private static void delete(Scanner scanner){
