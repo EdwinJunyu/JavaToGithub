@@ -15,9 +15,26 @@ public class Q1 {
             }
         }
     }
+
+    public static void Q1Sort(String[] arr) {
+        int value = arr.length;
+        for (int i = 0; i < value - 1; i++) {
+            for (int j = i + 1; j < value - i; j++) {
+                if (arr[i].compareTo(arr[j]) > 0) {
+                    String temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        int [] test = {1,4,2,5,2,6,3,8,3,8};
-        Q1.Q1Sort(test);
-        System.out.println(Arrays.toString(test));
+        int [] test1 = {1,4,2,5,2,6,3,8,3,8};
+        String[] test2 = {"b","a","c"};
+        Q1.Q1Sort(test1);
+        System.out.println(Arrays.toString(test1));
+        Q1.Q1Sort(test2);
+        System.out.println(Arrays.toString(test2));
     }
 }
