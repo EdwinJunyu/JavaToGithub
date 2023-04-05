@@ -1,4 +1,4 @@
-package 临时软件包;
+package 临时软件包.数据结构;
 
 public class 二分查找实战 {
     public static void main(String[] args) {

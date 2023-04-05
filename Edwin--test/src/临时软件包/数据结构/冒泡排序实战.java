@@ -1,4 +1,4 @@
-package 临时软件包;
+package 临时软件包.数据结构;
 
 import java.util.Arrays;
 

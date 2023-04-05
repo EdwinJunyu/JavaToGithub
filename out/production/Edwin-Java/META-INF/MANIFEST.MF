@@ -1,3 +1,3 @@
 Manifest-Version: 1.0
-Main-Class: 临时软件包.草稿.草稿
+Main-Class: 临时软件包.图书管理系统.Main
 

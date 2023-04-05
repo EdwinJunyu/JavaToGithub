@@ -1,4 +1,4 @@
-package 临时软件包;
+package 临时软件包.草稿;
 import java.util.Scanner;
 
 public class test {

@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Edwin-Java:jar2">
+    <output-path>$PROJECT_DIR$/out/artifacts/Edwin_Java_jar2</output-path>
+    <root id="archive" name="Edwin-Java.jar">
+      <element id="module-output" name="Edwin-Java" />
+    </root>
+  </artifact>
+</component>
