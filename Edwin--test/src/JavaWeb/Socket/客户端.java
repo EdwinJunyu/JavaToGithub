@@ -1,4 +1,4 @@
-package JavaWeb;
+package JavaWeb.Socket;
 
 import java.io.*;
 import java.net.Socket;

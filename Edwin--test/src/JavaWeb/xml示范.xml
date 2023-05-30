@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<outer>
+    <name> 小明 </name>
+    <inner type = "1">
+        <age> 10 </age>
+        <sex> 男 </sex>
+    </inner>
+</outer>
