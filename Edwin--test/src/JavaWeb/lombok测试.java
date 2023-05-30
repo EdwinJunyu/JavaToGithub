@@ -9,13 +9,13 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class test {
+public class lombok测试 {
     int sid;
     String name;
     String sex;
 
     public static void main(String[] args) {
-        test student = new test(123, "Edwin", "male");
+        lombok测试 student = new lombok测试(123, "Edwin", "male");
         System.out.println(student.getName());
         System.out.println(student.getSid());
     }

@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: JavaSE.图书管理系统.Main
-
